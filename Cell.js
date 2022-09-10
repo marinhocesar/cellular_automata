@@ -5,7 +5,7 @@ class Cell {
         this.index_i = x/size;
         this.index_j = y/size;
         this.size = size;
-        this.state = round(random(0,1));
+        this.state = round(random(0,0.55));
         this.future_state = this.state;
         this.rule_alive = [0, 0, 1, 1, 0, 0, 0, 0, 0]
         this.rule_dead = [0, 0, 0, 1, 0, 0, 0, 0, 0]
