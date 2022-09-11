@@ -1,6 +1,6 @@
 let aux_functions = require('../aux_functions');
 
-test('decimal from binary', () => {
+test('binary to decimal', () => {
     expect(aux_functions.binary_to_decimal('00101'))
         .toBe(5);
     expect(aux_functions.binary_to_decimal('10000'))
@@ -9,7 +9,7 @@ test('decimal from binary', () => {
         .toBe(33);
 });
 
-test('illegal value in binary_to_decimal argument', () => {
+test('unexpected value in binary_to_decimal arguments', () => {
     expect(aux_functions.binary_to_decimal('caio'))
         .toBe(-1);
     expect(aux_functions.binary_to_decimal('00100201'))
@@ -23,7 +23,7 @@ test('decimal to binary', () => {
         .toBe('1100000001000');
 });
 
-test('illegal value in decimal_to_binary argument', () => {
+test('unexpected value in decimal_to_binary arguments', () => {
     expect(aux_functions.decimal_to_binary(-2))
         .toBe('');
      expect(aux_functions.decimal_to_binary('a'))
