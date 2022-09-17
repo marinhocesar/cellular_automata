@@ -2,7 +2,11 @@
     "devDependencies": {
         "jest": "^29.0.2"
     },
+    "jest": {
+        "testEnvironment": "node"
+    },
     "scripts": {
         "test": "jest"
     }
+
 }

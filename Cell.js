@@ -1,5 +1,5 @@
 class Cell {
-    constructor(x, y, size){
+    constructor(x, y, size, rule_alive, rule_dead){
         this.x = x;
         this.y = y;
         this.index_i = x/size;
@@ -7,8 +7,8 @@ class Cell {
         this.size = size;
         this.state = round(random(0,0.55));
         this.future_state = this.state;
-        this.rule_alive = [0, 0, 1, 1, 0, 0, 0, 0, 0]
-        this.rule_dead = [0, 0, 0, 1, 0, 0, 0, 0, 0]
+        this.rule_alive = rule_alive;
+        this.rule_dead = rule_dead;
         this.has_changed = true;
     }
 

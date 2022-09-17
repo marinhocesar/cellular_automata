@@ -44,5 +44,7 @@ function binary_to_decimal(binary_str) {
     return decimal_number;
 }
 
-exports.binary_to_decimal = binary_to_decimal;
-exports.decimal_to_binary = decimal_to_binary;
+// exports.binary_to_decimal = binary_to_decimal;
+// exports.decimal_to_binary = decimal_to_binary;
+
+console.log(binary_to_decimal("001100000000100000"))
