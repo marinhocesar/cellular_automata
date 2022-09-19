@@ -1,15 +1,19 @@
 class Cell {
-    constructor(x, y, size, rule_alive, rule_dead){
-        this.x = x;
-        this.y = y;
-        this.index_i = x/size;
-        this.index_j = y/size;
-        this.size = size;
-        this.state = round(random(0,0.55));
+    constructor(config){
+        this.x = config.x;
+        this.y = config.y;
+        this.start_x = config.start_x;
+        this.start_y = config.start_y;
+        this.size = config.size;
+        this.index_i = this.x/this.size;
+        this.index_j = this.y/this.size;
+        this.state = round(random(0,config.concentration));
         this.future_state = this.state;
-        this.rule_alive = rule_alive;
-        this.rule_dead = rule_dead;
+        this.rule_alive = config.rule_alive;
+        this.rule_dead = config.rule_dead;
         this.has_changed = true;
+        this.alive_color = config.alive_color;
+        this.dead_color = config.dead_color;
     }
 
     show() {
@@ -19,13 +23,13 @@ class Cell {
         
         noStroke();
         if (this.state == 0) {
-            fill(0);
+            fill(this.dead_color);
         }
         else {
-            fill(255);
+            fill(this.alive_color);
         }
 
-        rect(this.x, this.y, this.size)
+        rect(this.x+this.start_x, this.y+this.start_y, this.size)
 
     }
 
@@ -49,7 +53,6 @@ class Cell {
                 {
                     continue;
                 }
-
                 let near = cell_grid[index_x][index_y].state;
                 
                 if (near == 1) {

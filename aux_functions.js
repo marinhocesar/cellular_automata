@@ -46,5 +46,3 @@ function binary_to_decimal(binary_str) {
 
 // exports.binary_to_decimal = binary_to_decimal;
 // exports.decimal_to_binary = decimal_to_binary;
-
-console.log(binary_to_decimal("001100000000100000"))
